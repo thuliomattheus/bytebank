@@ -1,6 +1,7 @@
 fun main() {
     testandoListas()
     testandoMapas()
+    testandoConjuntos()
 }
 
 fun testandoListas() {
@@ -16,7 +17,24 @@ fun testandoListas() {
 
 fun testandoMapas() {
     val estados :HashMap<String, String> = hashMapOf()
-    estados["RN"] = "Natal"
+    estados["RN"] = "Rio Grande do Norte"
+    estados["CE"] = "Ceará"
+    estados["RJ"] = "Rio de Janeiro"
 
-    println(estados["RN"])
+    for(estado in estados) {
+        println("${estado.key}: ${estado.value}")
+    }
+}
+
+fun testandoConjuntos() {
+    var conjuntoA: HashSet<Int> = hashSetOf(2, 1, 12, 43)
+    println("${conjuntoA.sortedDescending()}")
+
+    conjuntoA.add(1)
+    conjuntoA.add(13)
+    conjuntoA.add(12)
+
+    for(elemento in conjuntoA.sorted()) {
+        println(elemento)
+    }
 }
