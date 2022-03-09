@@ -1,6 +1,5 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
-
+    println(ContaV2("thulio"))
     declaracaoDeVariaveis()
     estruturaCondicionalIfElse(1)
     estruturaCondicionalWhen(2)
@@ -31,6 +30,10 @@ fun estruturaCondicionalIfElse(variavel: Int) {
         println("a variável é positiva")
     } else {
         println("a variável é negativa")
+    }
+
+    if(variavel in 0..100) {
+        println("A variável faz parte da primeira centena")
     }
 }
 

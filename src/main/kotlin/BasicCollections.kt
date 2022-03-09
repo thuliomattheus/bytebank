@@ -2,6 +2,8 @@ fun main() {
     testandoListas()
     testandoMapas()
     testandoConjuntos()
+    convertendoListaEmMapa()
+    convertendoListaEmSet()
 }
 
 fun testandoListas() {
@@ -37,4 +39,58 @@ fun testandoConjuntos() {
     for(elemento in conjuntoA.sorted()) {
         println(elemento)
     }
+}
+
+fun convertendoListaEmMapa() {
+    val planetas: List<String> = listOf("Mercúrio", "Vênus", "Terra", "Marte", "Júpiter",
+        "Saturno", "Urânio", "Netuno"
+    )
+
+    var planetasComoMapa:Map<String, String>
+
+    planetasComoMapa =
+        planetas.map {
+            p -> p to p.substring(0)
+        }
+        .toMap()
+
+    // OU
+
+    planetasComoMapa =
+        planetas.associateWith {
+            p -> p.substring(0)
+        }
+
+    // OU
+
+    planetasComoMapa =
+        planetas.associate {
+                p -> p to p.substring(0, 1)
+        }
+
+    // OU
+
+    planetasComoMapa =
+        planetas.associateBy (
+            { it }, { it.uppercase() }
+        )
+
+    println(planetasComoMapa)
+}
+
+fun convertendoListaEmSet() {
+    val planetas: List<String> = listOf("Mercúrio", "Vênus", "Terra", "Marte", "Júpiter",
+        "Saturno", "Urânio", "Netuno", "Netuno"
+    )
+
+    println(planetas
+        .filter {
+                p -> p.startsWith("M") || p.endsWith("O", true)
+        }
+        .map {
+            p -> p.uppercase()
+        }
+        .sorted()
+        .toSet()
+    )
 }
