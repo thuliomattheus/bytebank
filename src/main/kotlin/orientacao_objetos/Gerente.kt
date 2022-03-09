@@ -1,6 +1,8 @@
 package orientacao_objetos
 
-class Gerente : Funcionario {
+class Gerente : Funcionario,
+    Autenticavel
+{
 
     var senha: String = ""
         private set
@@ -14,7 +16,7 @@ class Gerente : Funcionario {
         this.senha = senha
     }
 
-    fun autentica(senha: String) {
+    override fun autentica(senha: String) {
         if(senha == this.senha) println("Seja bem-vindo(a)")
         else println("Senha incorreta")
     }
