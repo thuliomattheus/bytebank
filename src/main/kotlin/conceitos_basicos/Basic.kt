@@ -1,3 +1,5 @@
+package conceitos_basicos
+
 fun main(args: Array<String>) {
     println(ContaV2("thulio"))
     declaracaoDeVariaveis()

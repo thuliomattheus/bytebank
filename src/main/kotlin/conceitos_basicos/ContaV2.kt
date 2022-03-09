@@ -1,3 +1,5 @@
+package conceitos_basicos
+
 class ContaV2(private val titular: String) {
 
     private val numero: UInt = (Math.random() * 100000000).toUInt()
@@ -11,7 +13,7 @@ class ContaV2(private val titular: String) {
     constructor(nome: String, sobrenome: String): this("$nome $sobrenome") {}
 
     override fun toString(): String {
-        return "Conta(titular='$titular', numero=$numero, saldo=$saldo)"
+        return "basic.Conta(titular='$titular', numero=$numero, saldo=$saldo)"
     }
 
     fun main(args: Array<String>) {
@@ -43,7 +45,7 @@ class ContaV2(private val titular: String) {
         return saldo
     }
 
-    private fun transferirPara(contaDestino:ContaV2, valorTransferencia:Double) : Boolean {
+    private fun transferirPara(contaDestino: ContaV2, valorTransferencia:Double) : Boolean {
         if(valorTransferencia > 0 && saldo >= valorTransferencia) {
             this.sacar(valorTransferencia)
             contaDestino.depositar(valorTransferencia)

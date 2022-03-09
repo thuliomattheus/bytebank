@@ -1,3 +1,5 @@
+package conceitos_basicos
+
 class Conta() {
 
     constructor(titular:String = "valor padrão") : this() {
@@ -19,7 +21,7 @@ class Conta() {
         }
 
     override fun toString(): String {
-        return "Conta(titular='$titular', numero=$numero, saldo=$saldo)"
+        return "basic.Conta(titular='$titular', numero=$numero, saldo=$saldo)"
     }
 
     fun main() {
@@ -51,7 +53,7 @@ class Conta() {
         return saldo
     }
 
-    private fun transferirPara(contaDestino:Conta, valorTransferencia:Double) : Boolean {
+    private fun transferirPara(contaDestino: Conta, valorTransferencia:Double) : Boolean {
         if(valorTransferencia > 0 && saldo >= valorTransferencia) {
             this.sacar(valorTransferencia)
             contaDestino.depositar(valorTransferencia)
