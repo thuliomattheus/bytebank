@@ -1,7 +1,7 @@
 package orientacao_objetos
 
 fun testaFuncionarios() {
-    val funcionarioComum = Funcionario("Barkley", "123", 5.0)
+    val funcionarioComum = Gerente("Barkley", "123", 5.0, senha = "hahaha")
     val gerente = Gerente("Kanté", "456", 10.0, senha = "petit")
     val diretor = Diretor("Drogba", "789", 20.0, "king")
 

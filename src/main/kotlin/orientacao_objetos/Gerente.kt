@@ -20,6 +20,6 @@ class Gerente : Funcionario {
     }
 
     override fun bonificacao(): Double {
-        return 2 * super.bonificacao()
+        return 0.2 * super.salario
     }
 }
