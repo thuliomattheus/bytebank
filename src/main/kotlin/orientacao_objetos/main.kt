@@ -1,14 +1,13 @@
 package orientacao_objetos
 
 fun main() {
-    testaFuncionarios()
-//    testaContas()
+//    testaFuncionarios()
+    testaContas()
 }
 
-/*
 fun testaContas() {
-    val contaNormal: ContaV3 = ContaV3("Thúlio")
     val contaCorrente: ContaCorrente = ContaCorrente("Hazard")
+    val contaNormal: ContaV3 = ContaPoupanca("Thúlio")
 
     println(contaNormal.depositar(100.0))
     println(contaCorrente.depositar(100.0))
@@ -16,4 +15,3 @@ fun testaContas() {
     println(contaNormal.sacar(10.0))
     println(contaCorrente.sacar(10.0))
 }
- */
