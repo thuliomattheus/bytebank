@@ -1,4 +1,4 @@
-package orientacao_objetos
+package casting_e_data_class
 
 fun testaCasting() {
 
