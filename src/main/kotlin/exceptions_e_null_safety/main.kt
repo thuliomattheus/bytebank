@@ -14,4 +14,6 @@ fun main() {
 
     testandoIfElseExpression(43)
     testandoIfElseExpression(98)
+
+    testandoLancamentoExcecoes()
 }
