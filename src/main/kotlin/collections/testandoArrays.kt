@@ -1,5 +1,7 @@
 package collections
 
+import java.math.BigDecimal
+
 fun main() {
     val stringArray: Array<String> = arrayOf("Testando", "criação", "de", "array")
     val arrayDeArrays: Array<Array<String>> = arrayOf(
@@ -7,6 +9,8 @@ fun main() {
     )
     val idades = declarandoArrays()
     percorrendoArrays(idades)
+    usandoFuncoesComunsDeArrays()
+    usandoBigDecimal()
 }
 
 private fun declarandoArrays(): IntArray {
@@ -59,4 +63,33 @@ private fun percorrendoArrays(idades: IntArray) {
     }
 
     println(salarios.contentToString())
+}
+
+private fun usandoFuncoesComunsDeArrays() {
+    var idades: IntArray = intArrayOf(12, 18, 23, 43, 30)
+
+    println("A maior idade é ${idades.maxOrNull() ?: "nenhuma"}")
+    println("A menor idade é ${idades.minOrNull() ?: "nenhuma"}")
+    println("A idade média é ${idades.average()}")
+    println("Todas as idades são maiores que 20 anos? ${idades.all { it > 20} }")
+    println("Alguma idade é igual a 18 anos? ${idades.any { it == 18} }")
+    println("Lista de idades abaixo de 27: ${idades.filter { it < 27} }")
+    println("Primeira idade ímpar: ${idades.find {it % 2 == 1} }")
+
+    idades.sort()
+    println("Idades ordenadas: ${idades.contentToString()}")
+}
+
+private fun usandoBigDecimal() {
+    var salarios: Array<BigDecimal> = arrayOf(BigDecimal.valueOf(5600), BigDecimal.valueOf(8700.50), BigDecimal.valueOf(2560))
+    var salariosUsandoFuncaoCriadaPorNos: Array<BigDecimal> = bigDecimalArrayOf(BigDecimal.valueOf(5600), BigDecimal.valueOf(8700.50), BigDecimal.valueOf(2560))
+
+    println(salarios.contentToString())
+    println(salariosUsandoFuncaoCriadaPorNos.contentToString())
+}
+
+private fun bigDecimalArrayOf(vararg valores: BigDecimal): Array<BigDecimal> {
+    return Array(valores.size) {
+        valores[it]
+    }
 }
