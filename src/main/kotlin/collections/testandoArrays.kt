@@ -10,7 +10,6 @@ fun main() {
     val idades = declarandoArrays()
     percorrendoArrays(idades)
     usandoFuncoesComunsDeArrays()
-    usandoBigDecimal()
 }
 
 private fun declarandoArrays(): IntArray {
@@ -78,18 +77,4 @@ private fun usandoFuncoesComunsDeArrays() {
 
     idades.sort()
     println("Idades ordenadas: ${idades.contentToString()}")
-}
-
-private fun usandoBigDecimal() {
-    var salarios: Array<BigDecimal> = arrayOf(BigDecimal.valueOf(5600), BigDecimal.valueOf(8700.50), BigDecimal.valueOf(2560))
-    var salariosUsandoFuncaoCriadaPorNos: Array<BigDecimal> = bigDecimalArrayOf(BigDecimal.valueOf(5600), BigDecimal.valueOf(8700.50), BigDecimal.valueOf(2560))
-
-    println(salarios.contentToString())
-    println(salariosUsandoFuncaoCriadaPorNos.contentToString())
-}
-
-private fun bigDecimalArrayOf(vararg valores: BigDecimal): Array<BigDecimal> {
-    return Array(valores.size) {
-        valores[it]
-    }
 }
