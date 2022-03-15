@@ -26,4 +26,15 @@ fun main() {
 
     val quadradoDoSegundo = { _: Double, t: Double -> t.pow(2).toInt() }
     println("O quadrado de 100 é ${quadradoDoSegundo(78.0, 100.0)}")
+
+    // Sem esse return@minhaLambdaFunction, o retorno sempre seria o dobro(it)
+    val maiorEntreODobroOuDez: (Int) -> Int = minhaLambdaFunction@{
+        if(it < 5) {
+            return@minhaLambdaFunction 10
+        }
+
+        return@minhaLambdaFunction dobro(it)
+    }
+    println("O maior entre o dobro ou dez do número 4 é ${maiorEntreODobroOuDez(4)}")
+    println("O maior entre o dobro ou dez do número 9 é ${maiorEntreODobroOuDez(9)}")
 }
