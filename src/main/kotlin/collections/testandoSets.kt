@@ -5,7 +5,7 @@ fun main() {
     val conjuntoMamiferos = setOf<String>("Coelho", "Baleia", "Gato", "Golfinho", "Cavalo")
     val conjuntoAnimaisMarinhos = mutableSetOf<String>("Tubarão", "Arraia", "Golfinho", "Baleia")
 
-    // Métodos inline não precisam do . e nem dos parênteses para serem chamados
+    // Métodos infix não precisam do . e nem dos parênteses para serem chamados
     val conjuntoMamiferosTerrestres = conjuntoMamiferos subtract conjuntoAnimaisMarinhos
     println(conjuntoMamiferosTerrestres)
 
