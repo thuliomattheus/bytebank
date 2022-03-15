@@ -1,7 +1,7 @@
 package programacao_funcional
 
 fun main() {
-    val funcaoInutil = ::funcaoQueNaoFazNadaNaoRecebeParametroENaoTemRetorno
+    val funcaoInutil: () -> Unit = ::funcaoQueNaoFazNadaNaoRecebeParametroENaoTemRetorno
     println(funcaoInutil())
 
     val funcaoInutilSemDeclararOTipo = ::funcaoQueNaoFazNadaNaoRecebeParametroENaoTemRetorno
