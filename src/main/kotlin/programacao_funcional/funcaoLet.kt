@@ -29,7 +29,20 @@ fun main() {
     listOf<Int?>().let(::funcaoQuePodeSerChamadaNoLetAPartirDeUmaListaDeNumerosQuePodeSerNula)
 
     funcaoQueRecebeOutraFuncao { 2 }
+
+    // SEM USAR O LET
+    val usuario = Usuario("Thúlio", 27)
+    println("O nome do usuário é ${usuario.nome} e essa pessoa tem ${usuario.idade} anos")
+
+    // USANDO O LET
+    val teste = Usuario("Thúlio", 27)
+        . let {
+            "O nome do usuário é ${usuario.nome} e essa pessoa tem ${usuario.idade} anos"
+        }
+        . let(::println)
 }
+
+private data class Usuario(val nome: String, val idade: Int)
 
 fun funcaoQuePodeSerChamadaNoLetSemRetorno(palavraQuePodeSerNula: String?) {
     println("funcaoQuePodeSerChamadaNoLetSemRetorno executada")
