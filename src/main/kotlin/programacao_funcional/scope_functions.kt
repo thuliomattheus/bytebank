@@ -1,7 +1,5 @@
 package programacao_funcional
 
-import java.lang.System.Logger
-
 data class Fruta(var nome: String, var cor: String)
 
 fun main() {
@@ -71,6 +69,34 @@ private fun testandoORun(frutas: List<Fruta>) {
         }
 }
 
+private fun testandoOWith(frutas: MutableList<Fruta>) {
+
+    // O with consegue alterar o valor do receiver por referência
+    println(frutas)
+    with(frutas) {
+        this[0] = Fruta("Banana", "Amarelo")
+        this[1].cor = "Verde"
+    }
+    println(frutas)
+
+    println("with sem retorno:")
+    with(frutas) {
+        println("\tfrutas: $frutas")
+        println("\tthis: $this")
+        println("\tsize: $size")
+        println("\tfirst: ${first()}")
+        println("\tfirst.nome: ${first().nome}")
+    }
+
+    val withComRetorno = with(frutas.first()) {
+        "\tfrutas: $frutas\n" +
+                "\tthis: $this\n" +
+                "\tnome: $nome"
+    }
+
+    println("withComRetorno:\n$withComRetorno")
+}
+
 private fun testandoOApply(frutas: List<Fruta>) {
     println("frutas: $frutas")
     val oApplySempreRetornaOReceiver = frutas.first().apply{
@@ -97,32 +123,4 @@ private fun testandoOAlso(frutas: List<Fruta>) {
         .also {
             println("O also retorna o receiver, mas não é possível modificar o valor do receiver")
         }
-}
-
-private fun testandoOWith(frutas: MutableList<Fruta>) {
-
-    // O with consegue alterar o valor do receiver por referência
-    println(frutas)
-    with(frutas) {
-        this[0] = Fruta("Banana", "Amarelo")
-        this[1].cor = "Verde"
-    }
-    println(frutas)
-
-    println("with sem retorno:")
-    with(frutas) {
-        println("\tfrutas: $frutas")
-        println("\tthis: $this")
-        println("\tsize: $size")
-        println("\tfirst: ${first()}")
-        println("\tfirst.nome: ${first().nome}")
-    }
-
-    val withComRetorno = with(frutas.first()) {
-        "\tfrutas: $frutas\n" +
-        "\tthis: $this\n" +
-        "\tnome: $nome"
-    }
-
-    println("withComRetorno:\n$withComRetorno")
 }
